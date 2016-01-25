@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"></meta>
+
+		<!-- Page Title -->
+		<title>LOG2420 - Détails des séances</title>
+
+		<!-- Tab Icon -->
+		<link rel="shortcut icon" href="http://www.polymtl.ca/profiles/portail/themes/custom/bueno/favicon.ico" type="image/vnd.microsoft.icon">
+
+		<!-- Link to javascript and CSS stylesheet -->
+		<link type="text/css" rel="stylesheet" href="seances-bonus.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+	</head>
+	<body ng-app = "menuModule" ng-controller="menuCtrl">
+
+		<header>
+				<a href="http://www.polymtl.ca/">
+					<img alt="LOG2420" src="logoPoly.png">
+				</a>
+
+				<div>
+					<span>LOG2420  -  Analyse et conception d'interfaces utilisateur</span>
+					<br>
+					<span>Hiver 2016</span>
+				</div>
+		</header>
+
+		<div id="separator">
+		</div>
+
+
+		<div class = "nav">
+			<ul id="list" >
+				<li ng-repeat = " x in menu" class = "dropdown" ng-init = "index = x">
+						<a ng-href="{{x.title.Lien}}"> {{x.title.Nom}}</a>
+						<div class = "dropdown-content">
+							<a ng-href="{{i.Lien}}"ng-repeat = "i in x.subTitle">{{i.Nom}}</a>
+						</div>
+				</li>
+			</ul>
+
+
+			<a class = "printLink" href="http://www.groupes.polymtl.ca/log2420/Seances/20161/index.php?&formatimp=o">
+			</a>
+
+
+		</div>
+
+		<div id="mainInformation">
+			<h1> Détails des séances</h1>
+			<p>
+				<a href="http://www.groupes.polymtl.ca/log2420/Seances/20161/index.php?charge=o">Version</a>
+				pour les chargés de cours
+			</p>
+
+			<p class = "emphase">
+				Attention: cette page et son contenu seront modifiés en cours de trimestre selon les besoins.
+				Attendez à la semaine correspondante pour imprimer les transparents!
+			</p>
+
+			<p>
+				Les détails de chaque séance de cours est fourni semaine par semaine.
+				<br>
+				<a href="#1">1</a>
+				<a href="#2">2</a>
+				<a href="#3">3</a>
+				<a href="#4">4</a>
+				<a href="#5">5</a>
+				<a href="#6">6</a>
+				<a href="#7">7</a>
+				<a href="#8">8</a>
+				<a href="#9">9</a>
+				<a href="#10">10</a>
+				<a href="#11">11</a>
+				<a href="#12">12</a>
+				<a href="#13">13</a>
+				<a href="#14">14</a>
+			</p>
+
+			<ul >
+				<li class = "underline">La matière à réviser pour les examens intra et final est indiquée par cette couleur de fond.</li>
+			</ul>
+
+			<table>
+				<thead>
+						<th colspan="2">Semaine</th>
+						<th>Transparents</th>
+						<th width = "40%">Documents</th>
+						<th>Evaluations</th>
+						<th>Laboratoire</th>
+				</thead>
+
+				<tbody>
+					<tr id="{{$index+1}}" ng-repeat ="x in tableData" class = "{{rowStyles[$index]}}">
+						<td>{{$index+1}}</td>
+						<td ng-bind-html = "trust(x.date)"></td>
+						<td ng-if = "x.transparents !== '' " ng-bind-html = "trust(x.transparents)"></td>
+						<td ng-if = "x.transparents !== '' " ng-bind-html = "trust(x.documents)"></td>
+						<td ng-if = "x.transparents === '' "  colspan="2" class="centered-cell" ng-bind-html = "trust(x.documents)"></td>
+						<td ng-bind-html = "trust(x.evaluations)"></td>
+						<td ng-bind-html = "trust(x.laboratoire)"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<script type="text/javascript" src="seances-bonus.js"></script>
+	</body>
+</html>

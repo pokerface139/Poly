@@ -1,0 +1,185 @@
+
+body
+{
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+	min-width: 840px;
+	min-height: 74px;
+	display : flex;
+	-webkit-align-items : center;
+	align-items: center;
+	background-image : url(http://www.groupes.polymtl.ca/log2420/background2.jpg);
+	background-repeat: repeat-x;
+}
+
+header a:first-child {
+	margin-right: 10px;
+}
+
+header div span {
+	color : midnightblue;
+	font-family : Verdana, Arial, sans-serif;
+}
+
+header div span:first-child{
+	font-size : x-large;
+}
+
+header div span:last-child{
+	font-size : large;
+}
+
+header a:nth-child(3)
+{
+	display : inline-block;
+	width : 63px;
+	text-align: right;
+	margin-left : auto;
+	background-color:#cecab6;
+
+}
+
+header a:nth-child(3) span
+{
+	position:relative;
+	top:-5px;
+}
+
+table {
+	margin-right: 12px;
+}
+
+
+table,td,th {
+	border : 1px solid midnightblue;
+	border-collapse: collapse;
+}
+
+tbody {
+	display: table-row-group;
+	vertical-align: middle;
+}
+
+td {
+	text-align: left;
+}
+
+td:nth-child(1), td:nth-child(2) {
+	text-align: right;
+	padding-right: 3px;
+}
+
+th {
+	padding: 2px 2px 2px 2px;
+	background-color:  #f7eecf;
+	border-bottom-width: 2px;
+}
+
+th:last-child, td:last-child {
+	border-right-width: 2px;
+}
+
+ul {
+	padding-left: 24px;
+	padding-left: 24px;
+}
+
+
+h1 {
+	font-size: x-large;
+	font-weight: bold;
+	color : #034f93;
+	margin-top: 5px;
+
+}
+
+#list {
+	list-style-type: none;
+	margin:0;
+	padding:0;
+	width : 100px;
+	border : midnightblue solid 1px;
+	background-color: #f7eecf;
+}
+
+#list li a {
+	display: block;
+	color : midnightblue;
+	text-decoration: none;
+	padding : 1px 4px 1px 4px;
+}
+
+#list li a:hover {
+	color : #d2691e;
+}
+
+#list li:nth-child(2) a {
+	background-color: #094f93;
+	color : #dae4ed;
+}
+
+#list li:nth-child(2) a:hover {
+	color : #d2691e;
+}
+
+#separator {
+	height : 3px;
+	background-color: #034f93;
+	margin : 5px 0 5px 0;
+}
+
+
+#mainInformation, #menu{
+	display : inline-block;
+	vertical-align: top;
+}
+
+
+#mainInformation {
+	border-top: chocolate 1px solid;
+	margin-top : 20px;
+	margin-left: 25px;
+	margin-bottom: 200px;
+	font-size : medium;
+	color: midnightblue;
+	position : absolute;
+}
+
+
+#menu {
+	margin-top : 20px;
+	width: 98px;
+}
+
+.underline {
+	background-color : #FFEEAA;
+	margin-right: 25px;
+}
+
+.title {
+	background-color:  #a9c0d3;
+	pointer-events: none;
+  cursor: default;
+}
+
+.indent {
+	margin-left: 14px;
+}
+
+.printLink {
+	font-size: small;
+}
+
+.emphase {
+	font-weight: bold;
+}
+
+.centered-cell {
+	text-align: center;
+}
+
+.special-row {
+	background-color: #bbbbbb;
+}
